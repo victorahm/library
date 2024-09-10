@@ -13,7 +13,7 @@ gem "importmap-rails"
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 
-gem 'slim-rails'
+gem "slim-rails"
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 # Bundle and process CSS [https://github.com/rails/cssbundling-rails]
@@ -22,9 +22,9 @@ gem "cssbundling-rails"
 gem "jbuilder"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
-gem 'kaminari'
-gem 'friendly_id', '~> 5.5.0'
-gem 'ransack'
+gem "kaminari"
+gem "friendly_id", "~> 5.5.0"
+gem "ransack"
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
@@ -46,9 +46,9 @@ group :development, :test do
 
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "brakeman", require: false
-  gem 'factory_bot_rails'
+  gem "factory_bot_rails"
 
-  gem 'rspec-rails'
+  gem "rspec-rails"
   gem "nyan-cat-formatter"
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
@@ -58,11 +58,11 @@ end
 group :development do
   gem "better_errors"
   gem "binding_of_caller"
-  gem 'bullet'
+  gem "bullet"
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 end
 
 group :test do
-  gem 'shoulda-matchers', '~> 6.0'
+  gem "shoulda-matchers", "~> 6.0"
 end
