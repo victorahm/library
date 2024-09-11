@@ -8,6 +8,8 @@ gem "sprockets-rails"
 gem "pg", "~> 1.1"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
+
+gem "bootstrap"
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
@@ -24,6 +26,8 @@ gem "jbuilder"
 # gem "redis", ">= 4.0.1"
 gem "kaminari"
 gem "friendly_id", "~> 5.5.0"
+gem "faker"
+gem "isbn_validation"
 gem "ransack"
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"

@@ -1,0 +1,27 @@
+= render "shared/notice", notice: notice
+
+.row.vh-10.bg-light.rounded.mx-0
+  .col-sm-12
+    .d-flex.align-items-center.justify-content-between
+      h1.mb-0 Details
+      = link_to "Back to books", books_path
+.row.g-4.my-1
+  .col-sm-12
+    .bg-light.rounded.p-3
+      p
+        dl
+          dt Title
+          dd = @book.title
+          dt Author
+          dd = @book.author
+          dt Publisher
+          dd = @book.publisher
+          dt Genre
+          dd = @book.genre
+          dt ISBN
+          dd = @book.isbn
+          dt Year
+          dd = @book.year
+      .m-n2
+        = link_to "Edit this book", edit_book_path(@book), class: 'btn btn-primary m-2'
+        = link_to "Destroy this book", @book, method: :delete, class: 'btn btn-danger m-2', data: { "turbo-method": :delete, turbo_confirm: 'Are you sure?' }

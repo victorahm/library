@@ -72,6 +72,8 @@ GEM
       securerandom (>= 0.3)
       tzinfo (~> 2.0, >= 2.0.5)
     ast (2.4.2)
+    autoprefixer-rails (10.4.19.0)
+      execjs (~> 2)
     base64 (0.2.0)
     better_errors (2.10.1)
       erubi (>= 1.0.0)
@@ -83,6 +85,9 @@ GEM
       debug_inspector (>= 1.2.0)
     bootsnap (1.18.4)
       msgpack (~> 1.2)
+    bootstrap (5.3.3)
+      autoprefixer-rails (>= 9.1.0)
+      popper_js (>= 2.11.8, < 3)
     brakeman (6.2.1)
       racc
     builder (3.3.0)
@@ -102,11 +107,14 @@ GEM
     diff-lcs (1.5.1)
     drb (2.2.1)
     erubi (1.13.0)
+    execjs (2.9.1)
     factory_bot (6.5.0)
       activesupport (>= 5.0.0)
     factory_bot_rails (6.4.3)
       factory_bot (~> 6.4)
       railties (>= 5.0.0)
+    faker (3.4.2)
+      i18n (>= 1.8.11, < 2)
     friendly_id (5.5.1)
       activerecord (>= 4.0.0)
     globalid (1.2.1)
@@ -121,6 +129,8 @@ GEM
     irb (1.14.0)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
+    isbn_validation (1.2.2)
+      activerecord (>= 3)
     jbuilder (2.12.0)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -180,6 +190,7 @@ GEM
       ast (~> 2.4.1)
       racc
     pg (1.5.8)
+    popper_js (2.11.8)
     psych (5.1.2)
       stringio
     puma (6.4.2)
@@ -340,13 +351,16 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootsnap
+  bootstrap
   brakeman
   bullet
   cssbundling-rails
   debug
   factory_bot_rails
+  faker
   friendly_id (~> 5.5.0)
   importmap-rails
+  isbn_validation
   jbuilder
   kaminari
   nyan-cat-formatter

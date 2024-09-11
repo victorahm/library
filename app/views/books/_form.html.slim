@@ -1,0 +1,36 @@
+= form_with(model: book) do |form|
+  - if book.errors.any?
+    .alert.alert-danger role="alert"
+      h4 = "#{pluralize(book.errors.count, "error")} prohibited this book from being saved:"
+      ul
+        - book.errors.each do |error|
+          li = error.full_message
+
+  .form-floating.mb-3
+    = form.text_field :title, class: 'form-control', placeholder: 'Title'
+    = form.label :title
+
+  .form-floating.mb-3
+    = form.text_field :author, class: 'form-control', placeholder: 'Author'
+    = form.label :author
+
+  .form-floating.mb-3
+    = form.text_field :publisher, class: 'form-control', placeholder: 'Publisher'
+    = form.label :publisher
+
+  .form-floating.mb-3
+    = form.text_field :genre, class: 'form-control', placeholder: 'Genre'
+    = form.label :genre
+
+  .form-floating.mb-3
+    = form.text_field :isbn, class: 'form-control', placeholder: 'ISBN'
+    = form.label :isbn
+
+  .form-floating.mb-3
+    = form.number_field :year, class: 'form-control', placeholder: 'Year'
+    = form.label :year
+
+  div
+    = form.submit nil, class: 'btn btn-primary'
+    - if book.persisted?
+      = link_to "Cancel", @book, class: 'btn btn-secondary m-2'

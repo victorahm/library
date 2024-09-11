@@ -1,0 +1,15 @@
+= render "shared/notice", notice: notice
+
+.row.vh-10.bg-light.rounded.mx-0
+  .col-sm-12
+    .d-flex.align-items-center.justify-content-between
+      h1.mb-0 Books
+      = link_to "New book", new_book_path
+.row.g-4.my-1#books
+  - @books.each do |book|
+    .col-sm-12.col-md-4.col-xl-3
+      .bg-light.rounded.p-3
+        == render book
+        = link_to "Show this book", book, class: 'btn btn-primary'
+  .col-sm-12
+    = paginate @books

@@ -1,0 +1,9 @@
+.row.vh-10.bg-light.rounded.mx-0
+  .col-sm-12
+    .d-flex.align-items-center.justify-content-between
+      h1.mb-0 Editing book
+      = link_to "Back to books", books_path
+.row.g-4.my-1
+  .col-sm-12
+    .bg-light.rounded.p-3
+      == render "form", book: @book
