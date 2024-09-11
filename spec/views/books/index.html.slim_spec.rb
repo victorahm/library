@@ -1,7 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe "books/index", type: :view do
+  let(:librarian) { create(:user, role: "librarian") }
   before(:each) do
+    sign_in librarian
+    assign(:q, Book.ransack(params[:q]))
     assign(:books, Kaminari.paginate_array([ create(:book), create(:book) ]).page(nil))
   end
 

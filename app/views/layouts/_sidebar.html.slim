@@ -4,15 +4,16 @@
       h3.text-primary
         i.fa.fa-hashtag.me-2
         | HOME
-    .d-flex.align-items-center.ms-4.mb-4
-      .position-relative
-        = image_tag "user-avatar.png", class: "rounded-circle", style: "width: 40px; height: 40px;"
-        .bg-success.rounded-circle.border.border-2.border-white.position-absolute.end-0.bottom-0.p-1
-      .ms-3
-        h6.mb-0
-          | Jhon Doe
-        span
-          | Admin
+    - if user_signed_in?
+      .d-flex.align-items-center.ms-4.mb-4
+        .position-relative
+          = image_tag "user-avatar.png", class: "rounded-circle", style: "width: 40px; height: 40px;"
+          .bg-success.rounded-circle.border.border-2.border-white.position-absolute.end-0.bottom-0.p-1
+        .ms-3
+          h6.mb-0
+            = current_user.name
+          span
+            = current_user.role.titleize
     .navbar-nav.w-100
       a.nav-item.nav-link[href="/"]
         i.fa.fa-tachometer-alt.me-2
@@ -20,12 +21,12 @@
       = link_to books_path, class: "nav-item nav-link" do
         i.fa.fa-th.me-2
         | Books
-      a.nav-item.nav-link[href="form.html"]
+      a.nav-item.nav-link[href="/"]
         i.fa.fa-keyboard.me-2
         | Borrowing
-      a.nav-item.nav-link[href="table.html"]
+      a.nav-item.nav-link[href="/"]
         i.fa.fa-table.me-2
         | Members
-      a.nav-item.nav-link[href="chart.html"]
+      a.nav-item.nav-link[href="/"]
         i.fa.fa-chart-bar.me-2
         | Librarians

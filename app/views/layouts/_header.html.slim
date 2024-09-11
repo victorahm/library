@@ -7,11 +7,21 @@ nav.navbar.navbar-expand.bg-light.navbar-light.sticky-top.px-4.py-0
   form.d-none.d-md-flex.ms-4
     input.form-control.border-0[type="search" placeholder="Search"]
   .navbar-nav.align-items-center.ms-auto
-    .nav-item.dropdown
-      a.nav-link.dropdown-toggle[href="#" data-bs-toggle="dropdown"]
-        = image_tag "user-avatar.png", class: "rounded-circle me-lg-2", style: "width: 40px; height: 40px;"
-        span.d-none.d-lg-inline-flex
-          | John Doe
-      .dropdown-menu.dropdown-menu-end.bg-light.border-0.rounded-0.rounded-bottom.m-0
-        a.dropdown-item[href="#"]
-          | Log Out
+    - if user_signed_in?
+      .nav-item.dropdown
+        a.nav-link.dropdown-toggle[href="#" data-bs-toggle="dropdown"]
+          = image_tag "user-avatar.png", class: "rounded-circle me-lg-2", style: "width: 40px; height: 40px;"
+          span.d-none.d-lg-inline-flex
+            = current_user.name
+        .dropdown-menu.dropdown-menu-end.bg-light.border-0.rounded-0.rounded-bottom.m-0
+          = link_to edit_user_registration_path, class: "dropdown-item" do
+            i.fa.fa-user.me-2
+            | Profile
+          = link_to destroy_user_session_path, method: :delete, class: "dropdown-item", data: { "turbo_method": :delete } do
+            i.fa.fa-sign-out.me-2
+            | Log Out
+    - else
+      .nav-item
+        = link_to new_user_session_path, class: "nav-link" do
+          i.fa.fa-sign-in.me-2
+          | Log In

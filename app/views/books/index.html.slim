@@ -1,10 +1,9 @@
-= render "shared/notice", notice: notice
-
 .row.vh-10.bg-light.rounded.mx-0
   .col-sm-12
     .d-flex.align-items-center.justify-content-between
       h1.mb-0 Books
-      = link_to "New book", new_book_path
+      - if current_user.librarian?
+        = link_to "New book", new_book_path
 .row.bg-light.rounded.mx-0
   .col-sm-12.m-1
     = render "search_form", q: @q

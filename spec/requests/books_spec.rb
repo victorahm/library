@@ -16,6 +16,7 @@ RSpec.describe "/books", type: :request do
   # This should return the minimal set of attributes required to create a valid
   # Book. As you add validations to Book, be sure to
   # adjust the attributes here as well.
+  let(:user) { create(:user, role: 'librarian') }
   let(:valid_attributes) {
     attributes_for(:book)
   }
@@ -23,6 +24,10 @@ RSpec.describe "/books", type: :request do
   let(:invalid_attributes) {
     attributes_for(:book, title: nil)
   }
+
+  before do
+    sign_in user
+  end
 
   describe "GET /index" do
     it "renders a successful response" do

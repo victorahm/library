@@ -1,0 +1,19 @@
+.d-flex.align-items-center.justify-content-between.mb-3
+  h3
+    | Sign In
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  .form-floating.mb-3
+    = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "name@example.com"
+    = f.label :email
+  .form-floating.mb-4
+    = f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "Password"
+    = f.label :password
+  .d-flex.align-items-center.justify-content-between.mb-4
+    .form-check
+      = f.check_box :remember_me, class: "form-check-input"
+      = f.label :remember_me, class: "form-check-label"
+    = link_to "Forgot Password", new_password_path(resource_name)
+  = f.submit "Sign In", class: "btn btn-primary py-3 w-100 mb-4"
+  p.text-center.mb-0
+    |> Don't have an Account?
+    = link_to "Sign Up", new_registration_path(resource_name)

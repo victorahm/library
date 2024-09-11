@@ -1,4 +1,7 @@
 class BooksController < ApplicationController
+  before_action :authenticate_user!
+  before_action :authorize_librarian, only: [ :new, :create, :edit, :update, :destroy ]
+
   before_action :set_book, only: %i[ show edit update destroy ]
 
   # GET /books or /books.json
@@ -62,6 +65,10 @@ class BooksController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_book
       @book = Book.friendly.find(params[:id])
+    end
+
+    def authorize_librarian
+      redirect_to root_path, alert: "You are not authorized!" unless current_user.librarian?
     end
 
     # Only allow a list of trusted parameters through.

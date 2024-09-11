@@ -17,10 +17,9 @@ html
     = javascript_importmap_tags
   body
     .container-xxl.position-relative.bg-white.d-flex.p-0
-      = render "layouts/sidebar"
-      .content
-        = render "layouts/header"
-        .container-fluid.pt-4.px-4
-          = render "layouts/flash"
-          = yield
-        = render "layouts/footer"
+      .container-fluid
+        .row.h-100.align-items-center.justify-content-center[style="min-height: 100vh;"]
+          .col-12.col-sm-8.col-md-6.col-lg-5.col-xl-4
+            .bg-light.rounded.p-4.p-sm-5.my-4.mx-3
+              = render "layouts/flash"
+              = yield

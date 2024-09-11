@@ -1,7 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe "books/show", type: :view do
+  let(:librarian) { create(:user, role: "librarian") }
   before(:each) do
+    sign_in librarian
     assign(:book, create(:book))
   end
 

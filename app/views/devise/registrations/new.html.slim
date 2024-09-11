@@ -1,0 +1,26 @@
+.d-flex.align-items-center.justify-content-between.mb-3
+  h3
+    | Sign Up
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = render "devise/shared/error_messages", resource: resource
+  .form-floating.mb-3
+    = f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control", placeholder: "John Doe"
+    = f.label :name
+  .form-floating.mb-3
+    = f.email_field :email, autocomplete: "email", class: "form-control", placeholder: "name@example.com"
+    = f.label :email
+  .form-floating.mb-4
+    = f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "Password"
+    = f.label :password
+  .form-floating.mb-4
+    = f.password_field :password_confirmation, autocomplete: "current-password", class: "form-control", placeholder: "Confirm Password"
+    = f.label :password_confirmation
+  .d-flex.align-items-center.justify-content-between.mb-4
+    .form-check
+      = f.check_box :remember_me, class: "form-check-input"
+      = f.label :remember_me, class: "form-check-label"
+    = link_to "Forgot Password", new_password_path(resource_name)
+  = f.submit "Sign Un", class: "btn btn-primary py-3 w-100 mb-4"
+  p.text-center.mb-0
+    |> Already have an Account?
+    = link_to "Sign In", new_session_path(resource_name)

@@ -7,3 +7,6 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+# TODO: Set password for the admin user in an environment variable
+User.create!(name: "Admin", email: "admin@example.com", password: "password", role: "librarian")
+puts "Admin user created"

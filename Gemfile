@@ -24,6 +24,7 @@ gem "cssbundling-rails"
 gem "jbuilder"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
+gem "devise"
 gem "kaminari"
 gem "friendly_id", "~> 5.5.0"
 gem "faker"
