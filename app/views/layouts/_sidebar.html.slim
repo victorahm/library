@@ -6,7 +6,7 @@
         | HOME
     .d-flex.align-items-center.ms-4.mb-4
       .position-relative
-        img.rounded-circle[src="img/user.jpg" alt="" style="width: 40px; height: 40px;"]
+        = image_tag "user-avatar.png", class: "rounded-circle", style: "width: 40px; height: 40px;"
         .bg-success.rounded-circle.border.border-2.border-white.position-absolute.end-0.bottom-0.p-1
       .ms-3
         h6.mb-0
@@ -17,7 +17,7 @@
       a.nav-item.nav-link[href="/"]
         i.fa.fa-tachometer-alt.me-2
         | Dashboard
-      a.nav-item.nav-link[href="widget.html"]
+      = link_to books_path, class: "nav-item nav-link" do
         i.fa.fa-th.me-2
         | Books
       a.nav-item.nav-link[href="form.html"]
