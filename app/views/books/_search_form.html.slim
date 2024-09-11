@@ -1,0 +1,23 @@
+h4 Search book
+= search_form_for q, class: "row gx-3 gy-2 align-items-center" do |f|
+  .col-sm-12.col-md-4
+    = f.label :title_cont, "Title", class: "visually-hidden"
+    = f.search_field :title_cont, class: "form-control", placeholder: "Enter title"
+  .col-sm-12.col-md-4
+    = f.label :author_cont, "Author", class: "visually-hidden"
+    = f.search_field :author_cont, class: "form-control", placeholder: "Enter author"
+  .col-sm-12.col-md-4
+    = f.label :isbn_eq, "ISBN", class: "visually-hidden"
+    = f.search_field :isbn_eq, class: "form-control", placeholder: "Enter ISBN"
+  .col-sm-12.col-md-4
+    = f.label :publisher_cont, "Publisher", class: "visually-hidden"
+    = f.search_field :publisher_cont, class: "form-control", placeholder: "Enter publisher"
+  .col-sm-12.col-md-4
+    = f.label :genre_cont, "Genre", class: "visually-hidden"
+    = f.search_field :genre_cont, class: "form-control", placeholder: "Enter genre"
+  .col-sm-12.col-md-4
+    = f.label :year_eq, "Year", class: "visually-hidden"
+    = f.search_field :year_eq, class: "form-control", placeholder: "Enter year"
+  .col-sm-12.col-md-4
+    = f.submit "Search", class: "btn btn-primary me-2"
+    = link_to "Clear", books_path, class: "btn btn-secondary"
